@@ -1,0 +1,13 @@
+services:
+  cozy-stacks:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      LIBRARY_DATA_DIR: /data
+    volumes:
+      - cozy-stacks-data:/data
+    restart: unless-stopped
+
+volumes:
+  cozy-stacks-data:
